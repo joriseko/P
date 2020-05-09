@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace P
 {
@@ -6,7 +7,16 @@ namespace P
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+
+            PrintToDo printToDo = new PrintToDo();
+            printToDo.Print();
+            Console.WriteLine();
+
+            Controller controller = new Controller();
+            controller.StartToDoConsole();
+
+
+
         }
     }
 }
