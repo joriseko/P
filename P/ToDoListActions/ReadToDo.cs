@@ -82,7 +82,7 @@ namespace P
             Status = lineData[1];
             if (lineData[1] != "1")
             {
-                File.AppendAllText("ToDoWithoutCompleted.txt", Task + ',' + lineData[1] + Environment.NewLine);
+                File.AppendAllText("ToDoWithoutCompleted.txt", Task + ',' + Status + Environment.NewLine);
             }
         }
 
@@ -109,7 +109,13 @@ namespace P
         }
 
 
-        Status = newStatus;
+        public void ChangeDestunationFileWithSourceFile()
+        {
+
+        }
+        
+
+
 
 
 
