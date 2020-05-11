@@ -10,8 +10,8 @@ namespace P
     {
 
         ReadToDo readToDo = new ReadToDo();
-        static string directory = "ToDoList.txt";
-        string[] myToDoListToString = File.ReadAllLines(directory);
+        static string mainToDotxt = "ToDoList.txt";
+        string[] myToDoListToString = File.ReadAllLines(mainToDotxt);
         
         public void Print()
         {
@@ -53,6 +53,18 @@ namespace P
                 readToDo.DeleteCompleted(task);
             }
             Process.Start("notepad.exe", notepadWOutCompleted);
+        }
+
+
+        public void PrintAllChangingStatus()
+        {
+            string notepadChangedStatus = "ToDoListChangeState.txt";
+            File.WriteAllText("ToDoListChangeState.txt", string.Empty);
+            foreach (var task in myToDoListToString)
+            {
+                readToDo.RunThroughAllnChangeStatus(task);
+            }
+
         }
 
 

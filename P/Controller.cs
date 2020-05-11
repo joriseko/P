@@ -13,7 +13,7 @@ namespace P
             bool needToRender = true;
 
 
-            Console.WriteLine($"Choose:\n Enter - show all to do list\n C - show completed list\n N - show not completed list\n U - show unknown list\n D - delete completed tasks (new file created)\n + - add task\n Esc - finish work ");
+            Console.WriteLine($"Choose:\n Enter - show all to do list\n C - show completed list\n N - show not completed list\n U - show unknown list\n D - runs all tasks/creates new file excl. completed/opens it\n + - add task\n M - runs all tasks/asks status change/creates new file\n Esc - finish work ");
             do
             {
 
@@ -28,6 +28,12 @@ namespace P
                         case ConsoleKey.Enter:
                             Console.Clear();
                             printToDo.Print();
+                            Console.WriteLine();
+                            StartToDoConsole();
+                            break;
+                        case ConsoleKey.M:
+                            Console.Clear();
+                            printToDo.PrintAllChangingStatus();
                             Console.WriteLine();
                             StartToDoConsole();
                             break;
