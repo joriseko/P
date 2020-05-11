@@ -109,6 +109,7 @@ namespace P
         }
 
 
+        Status = newStatus;
 
 
 
@@ -125,7 +126,7 @@ namespace P
         lineData[1]= "xxx";
         File.("ToDoList.txt", lineData[0] + Status + Environment.NewLine);
         Console.ReadKey();
-
+        ...
 
         File.AppendAllText("ToDoList.txt", Task + ',' + Status + Environment.NewLine);
         Console.WriteLine($"Task: {Task}, Status:[{Status}]");
